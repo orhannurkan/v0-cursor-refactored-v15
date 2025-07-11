@@ -3,10 +3,26 @@
 echo "🔄 GitHub'dan değişiklikleri çekiliyor..."
 
 # Mevcut durumu kontrol et
+echo "📋 Mevcut durum kontrol ediliyor..."
 git status
 
-# Uzak repository'den güncellemeleri al
+# Uzak repository'yi güncelle
+echo "🌐 Uzak repository bilgileri güncelleniyor..."
 git fetch origin
+
+# Develop branch'indeki değişiklikleri çek
+echo "⬇️ Develop branch'indeki değişiklikler çekiliyor..."
+git pull origin develop
+
+# Sonucu kontrol et
+if [ $? -eq 0 ]; then
+    echo "✅ Değişiklikler başarıyla çekildi!"
+    echo "📊 Son commit bilgileri:"
+    git log --oneline -5
+else
+    echo "❌ Pull işlemi başarısız! Conflict olabilir."
+    echo "🔧 Conflict'leri çözmek için scripts/handle-conflicts.sh çalıştırın"
+fi
 
 # Ana branch'i güncelle
 echo "📥 Main branch güncelleniyor..."
@@ -24,4 +40,3 @@ fi
 git checkout main
 
 echo "✅ Senkronizasyon tamamlandı!"
-git log --oneline -5
