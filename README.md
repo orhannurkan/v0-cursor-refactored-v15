@@ -1,6 +1,6 @@
 # Proje Adı
 
-Modern Next.js projesi - v0 ile geliştirildi
+Modern Next.js tabanlı web uygulaması başlangıç projesi.
 
 ## 📋 İçindekiler
 
@@ -79,11 +79,11 @@ const response = await fetch('/api/endpoint', {
 ## ✨ Özellikler
 
 - ⚡ Next.js 15 App Router
-- 🎨 Tailwind CSS
-- 🧩 shadcn/ui bileşenleri
+- 🎨 Tailwind CSS ile modern tasarım
+- 🧩 shadcn/ui bileşen kütüphanesi
 - 📱 Responsive tasarım
 - 🌙 Dark mode desteği
-- 🔧 TypeScript
+- 🔧 TypeScript desteği
 
 ## 🛠️ Teknolojiler
 
@@ -100,14 +100,17 @@ Bu projede kullanılan ana teknolojiler:
 
 \`\`\`
 proje-adi/
-├── app/                    # Next.js App Router
+├── app/                 # Next.js App Router
 │   ├── api/               # API rotaları
-│   ├── components/        # React bileşenleri
-│   └── globals.css        # Global stiller
-├── components/            # Yeniden kullanılabilir bileşenler
-│   └── ui/               # UI bileşenleri
-├── lib/                   # Yardımcı fonksiyonlar
-├── public/               # Statik dosyalar
+│   ├── globals.css     # Global stiller
+│   ├── layout.tsx      # Ana layout
+│   └── page.tsx        # Ana sayfa
+├── components/         # React bileşenleri
+│   ├── ui/            # shadcn/ui bileşenleri
+│   └── theme-provider.tsx
+├── lib/               # Yardımcı fonksiyonlar
+├── hooks/             # Custom React hooks
+├── public/            # Statik dosyalar
 ├── scripts/              # Yardımcı scriptler
 └── README.md             # Bu dosya
 \`\`\`
@@ -149,7 +152,7 @@ Bu proje Vercel üzerinde kolayca deploy edilebilir:
 
 ## 📝 Lisans
 
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 📞 İletişim
 
