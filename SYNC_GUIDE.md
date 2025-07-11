@@ -1,75 +1,94 @@
-# GitHub Sync Guide for v0
+# GitHub Sync Rehberi
 
-Bu rehber, GitHub'daki değişiklikleri v0'a manuel olarak aktarmanız için hazırlanmıştır.
+Bu rehber, GitHub'daki develop branch'indeki değişiklikleri v0'a manuel olarak aktarmanız için hazırlanmıştır.
 
-## 🔄 Manuel Senkronizasyon Adımları
+## 🔄 Adım Adım Sync Süreci
 
-### 1. GitHub Repository'sini Açın
-[https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop](https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop)
+### 1. GitHub Repository'yi Kontrol Edin
+- [Repository Link](https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop)
+- Develop branch'inde olduğunuzdan emin olun
+- Son commit'leri inceleyin
 
-### 2. Son Commit'leri Kontrol Edin
-- **Commits** linkine tıklayın
-- Son değişiklikleri inceleyin
-- Hangi dosyaların değiştiğini not edin
+### 2. Değişiklikleri Tespit Edin
+\`\`\`bash
+# Son commit'leri görmek için
+git log --oneline -10
 
-### 3. Değişen Dosyaları Belirleyin
-Genellikle değişen dosyalar:
-- `app/page.tsx` - Ana sayfa bileşeni
-- `app/layout.tsx` - Layout bileşeni
-- `components/ui/*.tsx` - UI bileşenleri
-- `README.md` - Proje dokümantasyonu
-- `package.json` - Bağımlılıklar
+# Belirli bir commit'in detaylarını görmek için
+git show <commit-hash>
+\`\`\`
 
-### 4. Dosya İçeriklerini Kopyalayın
-Her değişen dosya için:
-1. Dosyaya tıklayın
+### 3. Dosya Güncelleme Süreci
+
+#### Yöntem 1: GitHub Web Interface
+1. Değişen dosyayı GitHub'da açın
 2. **Raw** butonuna tıklayın
 3. İçeriği kopyalayın (Ctrl+A, Ctrl+C)
 4. v0'da ilgili dosyayı bulun
 5. İçeriği yapıştırın (Ctrl+V)
 
-### 5. Değişiklikleri Test Edin
-- v0'da kodu çalıştırın
-- Hataları kontrol edin
-- Görünümü test edin
+#### Yöntem 2: Commit Karşılaştırması
+1. GitHub'da **Commits** sekmesine gidin
+2. İlgili commit'e tıklayın
+3. **Files changed** sekmesinde değişiklikleri görün
+4. Yeşil (+) ve kırmızı (-) satırları takip edin
+5. Değişiklikleri v0'da uygulayın
 
-## 🚀 Otomatik Senkronizasyon
+### 4. Yaygın Güncellenen Dosyalar
 
-v0'da GitHub entegrasyonu kullanarak:
-1. **Project Settings** → **GitHub**
-2. Repository'nizi bağlayın
-3. **Sync** butonunu kullanın
+| Dosya | Açıklama | Öncelik |
+|-------|----------|---------|
+| `app/page.tsx` | Ana sayfa bileşeni | Yüksek |
+| `app/layout.tsx` | Ana layout | Yüksek |
+| `README.md` | Proje dokümantasyonu | Orta |
+| `package.json` | Bağımlılıklar | Yüksek |
+| `components/ui/*.tsx` | UI bileşenleri | Orta |
+| `tailwind.config.ts` | Tailwind yapılandırması | Düşük |
 
-## 📝 Sık Karşılaşılan Durumlar
+### 5. Güncelleme Sonrası Kontroller
 
-### Merge Conflicts
-Eğer aynı dosyada hem v0'da hem GitHub'da değişiklik yaptıysanız:
-1. Her iki versiyonu karşılaştırın
-2. Hangi değişiklikleri tutacağınıza karar verin
-3. Manuel olarak birleştirin
+- [ ] Proje hatasız çalışıyor mu?
+- [ ] Tüm bileşenler doğru render ediliyor mu?
+- [ ] Styling sorunları var mı?
+- [ ] TypeScript hataları var mı?
 
-### Yeni Dosyalar
-GitHub'da yeni dosya eklendiyse:
-1. v0'da aynı konumda yeni dosya oluşturun
-2. İçeriği kopyalayın
+### 6. Sorun Giderme
 
-### Silinen Dosyalar
-GitHub'da dosya silindiyse:
-1. v0'da da aynı dosyayı silin
-2. Import'ları kontrol edin
+#### Yaygın Hatalar:
+- **Import hataları**: Dosya yollarını kontrol edin
+- **TypeScript hataları**: Tip tanımlarını kontrol edin
+- **CSS sorunları**: Tailwind sınıflarını kontrol edin
 
-## ✅ Kontrol Listesi
+#### Hata Çözüm Adımları:
+1. Hata mesajını okuyun
+2. İlgili dosyayı kontrol edin
+3. GitHub'daki orijinal dosya ile karşılaştırın
+4. Eksik kısımları tamamlayın
 
-- [ ] GitHub'daki son commit'leri kontrol ettim
-- [ ] Değişen dosyaları belirledim
-- [ ] Dosya içeriklerini v0'a kopyaladım
-- [ ] Kodu test ettim
-- [ ] Hatalar varsa düzelttim
-- [ ] Proje çalışıyor
+## 🛠️ Faydalı Araçlar
 
-## 🆘 Yardım
+### GitHub Karşılaştırma URL'leri
+\`\`\`
+# İki commit arasındaki farkı görmek için
+https://github.com/orhannurkan/v0-cursor-refactored-v15/compare/COMMIT1...COMMIT2
 
-Sorun yaşarsanız:
-1. v0'da **Undo** (Ctrl+Z) kullanın
-2. GitHub'daki dosya geçmişini kontrol edin
-3. Adım adım tekrar deneyin
+# Branch karşılaştırması
+https://github.com/orhannurkan/v0-cursor-refactored-v15/compare/main...develop
+\`\`\`
+
+### Hızlı Erişim Linkleri
+- [Develop Branch](https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop)
+- [Recent Commits](https://github.com/orhannurkan/v0-cursor-refactored-v15/commits/develop)
+- [Pull Requests](https://github.com/orhannurkan/v0-cursor-refactored-v15/pulls)
+
+## 📝 Sync Geçmişi
+
+Sync işlemlerinizi takip etmek için:
+
+| Tarih | Commit | Dosyalar | Durum |
+|-------|--------|----------|-------|
+| - | - | - | - |
+
+---
+
+**Not**: Bu rehberi bookmark'layın ve her sync işleminde referans olarak kullanın.
