@@ -1,94 +1,119 @@
-# GitHub Sync Rehberi
+# Git Pull Origin Develop - Sync Guide
 
-Bu rehber, GitHub'daki develop branch'indeki değişiklikleri v0'a manuel olarak aktarmanız için hazırlanmıştır.
+Bu rehber, GitHub'daki `develop` branch'indeki değişiklikleri v0'a manuel olarak aktarmanız için hazırlanmıştır.
 
-## 🔄 Adım Adım Sync Süreci
+## 🔄 Otomatik Senkronizasyon
 
-### 1. GitHub Repository'yi Kontrol Edin
-- [Repository Link](https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop)
-- Develop branch'inde olduğunuzdan emin olun
+v0'da GitHub entegrasyonu varsa:
+1. **Project Settings** → **GitHub** bölümüne gidin
+2. **Sync from Repository** butonuna tıklayın
+3. `develop` branch'ini seçin
+
+## 📋 Manuel Senkronizasyon Adımları
+
+### 1. Repository'yi Kontrol Edin
+- [Develop Branch](https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop) sayfasını açın
 - Son commit'leri inceleyin
+- Değişen dosyaları belirleyin
 
-### 2. Değişiklikleri Tespit Edin
+### 2. Branch Karşılaştırması
+- [Branch Comparison](https://github.com/orhannurkan/v0-cursor-refactored-v15/compare/main...develop) sayfasını açın
+- Hangi dosyaların değiştiğini görün
+- Değişikliklerin kapsamını anlayın
+
+### 3. Önemli Dosyalar
+
+Öncelikle bu dosyaları kontrol edin:
+
+#### Ana Uygulama Dosyaları
+- `app/page.tsx` - Ana sayfa bileşeni
+- `app/layout.tsx` - Kök layout
+- `app/globals.css` - Global stiller
+
+#### Konfigürasyon Dosyaları
+- `package.json` - Bağımlılıklar
+- `next.config.mjs` - Next.js konfigürasyonu
+- `tailwind.config.ts` - Tailwind CSS ayarları
+
+#### Bileşenler
+- `components/ui/` - UI bileşenleri
+- `components/theme-provider.tsx` - Tema sağlayıcısı
+
+#### Dokümantasyon
+- `README.md` - Proje dokümantasyonu
+
+### 4. Dosya Güncelleme Süreci
+
+Her dosya için:
+
+1. **GitHub'da dosyayı açın**
+   - Develop branch'inde ilgili dosyaya gidin
+   - "Raw" butonuna tıklayın
+
+2. **İçeriği kopyalayın**
+   - Tüm dosya içeriğini seçin
+   - Ctrl+C ile kopyalayın
+
+3. **v0'da güncelleyin**
+   - v0'da aynı dosyayı bulun
+   - Eski içeriği silin
+   - Yeni içeriği yapıştırın
+
+4. **Değişiklikleri kaydedin**
+   - Dosyayı kaydedin
+   - Syntax hatalarını kontrol edin
+
+### 5. Test ve Doğrulama
+
+Güncelleme sonrası:
+
+- [ ] Proje başarıyla build oluyor mu?
+- [ ] Ana sayfa düzgün görüntüleniyor mu?
+- [ ] Responsive tasarım çalışıyor mu?
+- [ ] Tüm bileşenler yükleniyor mu?
+- [ ] Console'da hata var mı?
+
+## 🛠️ Yararlı Scriptler
+
+### Tüm Dosyaları Listele
 \`\`\`bash
-# Son commit'leri görmek için
-git log --oneline -10
-
-# Belirli bir commit'in detaylarını görmek için
-git show <commit-hash>
+node scripts/fetch-all-files.js
 \`\`\`
 
-### 3. Dosya Güncelleme Süreci
-
-#### Yöntem 1: GitHub Web Interface
-1. Değişen dosyayı GitHub'da açın
-2. **Raw** butonuna tıklayın
-3. İçeriği kopyalayın (Ctrl+A, Ctrl+C)
-4. v0'da ilgili dosyayı bulun
-5. İçeriği yapıştırın (Ctrl+V)
-
-#### Yöntem 2: Commit Karşılaştırması
-1. GitHub'da **Commits** sekmesine gidin
-2. İlgili commit'e tıklayın
-3. **Files changed** sekmesinde değişiklikleri görün
-4. Yeşil (+) ve kırmızı (-) satırları takip edin
-5. Değişiklikleri v0'da uygulayın
-
-### 4. Yaygın Güncellenen Dosyalar
-
-| Dosya | Açıklama | Öncelik |
-|-------|----------|---------|
-| `app/page.tsx` | Ana sayfa bileşeni | Yüksek |
-| `app/layout.tsx` | Ana layout | Yüksek |
-| `README.md` | Proje dokümantasyonu | Orta |
-| `package.json` | Bağımlılıklar | Yüksek |
-| `components/ui/*.tsx` | UI bileşenleri | Orta |
-| `tailwind.config.ts` | Tailwind yapılandırması | Düşük |
-
-### 5. Güncelleme Sonrası Kontroller
-
-- [ ] Proje hatasız çalışıyor mu?
-- [ ] Tüm bileşenler doğru render ediliyor mu?
-- [ ] Styling sorunları var mı?
-- [ ] TypeScript hataları var mı?
-
-### 6. Sorun Giderme
-
-#### Yaygın Hatalar:
-- **Import hataları**: Dosya yollarını kontrol edin
-- **TypeScript hataları**: Tip tanımlarını kontrol edin
-- **CSS sorunları**: Tailwind sınıflarını kontrol edin
-
-#### Hata Çözüm Adımları:
-1. Hata mesajını okuyun
-2. İlgili dosyayı kontrol edin
-3. GitHub'daki orijinal dosya ile karşılaştırın
-4. Eksik kısımları tamamlayın
-
-## 🛠️ Faydalı Araçlar
-
-### GitHub Karşılaştırma URL'leri
-\`\`\`
-# İki commit arasındaki farkı görmek için
-https://github.com/orhannurkan/v0-cursor-refactored-v15/compare/COMMIT1...COMMIT2
-
-# Branch karşılaştırması
-https://github.com/orhannurkan/v0-cursor-refactored-v15/compare/main...develop
+### Son Commit'leri Görüntüle
+\`\`\`bash
+node scripts/git-pull-simulation.js
 \`\`\`
 
-### Hızlı Erişim Linkleri
-- [Develop Branch](https://github.com/orhannurkan/v0-cursor-refactored-v15/tree/develop)
-- [Recent Commits](https://github.com/orhannurkan/v0-cursor-refactored-v15/commits/develop)
-- [Pull Requests](https://github.com/orhannurkan/v0-cursor-refactored-v15/pulls)
+### Manuel Sync Rehberi
+\`\`\`bash
+bash scripts/manual-sync-guide.sh
+\`\`\`
 
-## 📝 Sync Geçmişi
+## ⚠️ Dikkat Edilmesi Gerekenler
 
-Sync işlemlerinizi takip etmek için:
+1. **Backup Alın**: Güncelleme öncesi mevcut dosyalarınızın yedeğini alın
+2. **Adım Adım**: Tüm dosyaları birden değil, tek tek güncelleyin
+3. **Test Edin**: Her güncelleme sonrası projeyi test edin
+4. **Conflict'ler**: Çakışan değişiklikler varsa dikkatli birleştirin
 
-| Tarih | Commit | Dosyalar | Durum |
-|-------|--------|----------|-------|
-| - | - | - | - |
+## 🔧 Sorun Giderme
+
+### Build Hataları
+- Syntax hatalarını kontrol edin
+- Import/export statement'ları doğru mu?
+- Bağımlılıklar eksik mi?
+
+### Stil Sorunları
+- CSS class'ları doğru mu?
+- Tailwind konfigürasyonu güncel mi?
+- Global stiller çakışıyor mu?
+
+### Bileşen Hataları
+- Props doğru geçiliyor mu?
+- Hook'lar doğru kullanılıyor mu?
+- Type definition'lar uyumlu mu?
 
 ---
 
-**Not**: Bu rehberi bookmark'layın ve her sync işleminde referans olarak kullanın.
+Bu rehberi takip ederek develop branch'indeki tüm değişiklikleri başarıyla v0'a aktarabilirsiniz.
