@@ -1,30 +1,191 @@
-# Cursor-Refactored-v15
+# Proje Adı
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Bu projenin kısa bir açıklaması ve ne yaptığının özeti.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/ayribirakilmiskocababa-gmailcoms-projects/v0-cursor-refactored-v15)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/5nTiqJDlZ5l)
+## 📋 İçindekiler
 
-## Overview
+- [Kurulum](#kurulum)
+- [Kullanım](#kullanım)
+- [Özellikler](#özellikler)
+- [Teknolojiler](#teknolojiler)
+- [Katkıda Bulunma](#katkıda-bulunma)
+- [Lisans](#lisans)
+- [İletişim](#iletişim)
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## 🚀 Kurulum
 
-## Deployment
+### Gereksinimler
 
-Your project is live at:
+- Node.js (v18 veya üzeri)
+- npm veya yarn
+- Git
 
-**[https://vercel.com/ayribirakilmiskocababa-gmailcoms-projects/v0-cursor-refactored-v15](https://vercel.com/ayribirakilmiskocababa-gmailcoms-projects/v0-cursor-refactored-v15)**
+### Adım Adım Kurulum
 
-## Build your app
+1. Projeyi klonlayın:
+\`\`\`bash
+git clone https://github.com/kullanici-adi/proje-adi.git
+cd proje-adi
+\`\`\`
 
-Continue building your app on:
+2. Bağımlılıkları yükleyin:
+\`\`\`bash
+npm install
+# veya
+yarn install
+\`\`\`
 
-**[https://v0.dev/chat/projects/5nTiqJDlZ5l](https://v0.dev/chat/projects/5nTiqJDlZ5l)**
+3. Ortam değişkenlerini ayarlayın:
+\`\`\`bash
+cp .env.example .env.local
+\`\`\`
 
-## How It Works
+4. Geliştirme sunucusunu başlatın:
+\`\`\`bash
+npm run dev
+# veya
+yarn dev
+\`\`\`
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+5. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın.
+
+## 💻 Kullanım
+
+### Temel Kullanım
+
+Projeyi başlattıktan sonra:
+
+1. Ana sayfaya gidin
+2. Gerekli bilgileri girin
+3. İşlemlerinizi gerçekleştirin
+
+### API Kullanımı
+
+\`\`\`javascript
+// Örnek API çağrısı
+const response = await fetch('/api/endpoint', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    data: 'örnek veri'
+  })
+});
+\`\`\`
+
+## ✨ Özellikler
+
+- ⚡ Hızlı ve performanslı
+- 📱 Responsive tasarım
+- 🔒 Güvenli kimlik doğrulama
+- 🌙 Karanlık mod desteği
+- 🌍 Çoklu dil desteği
+- 📊 Gerçek zamanlı veri görselleştirme
+
+## 🛠️ Teknolojiler
+
+Bu projede kullanılan ana teknolojiler:
+
+- **Frontend:** React, Next.js, TypeScript
+- **Styling:** Tailwind CSS, shadcn/ui
+- **Backend:** Node.js, Express
+- **Veritabanı:** PostgreSQL, Prisma
+- **Kimlik Doğrulama:** NextAuth.js
+- **Deployment:** Vercel
+
+## 📁 Proje Yapısı
+
+\`\`\`
+proje-adi/
+├── app/                    # Next.js App Router
+│   ├── api/               # API rotaları
+│   ├── components/        # React bileşenleri
+│   └── globals.css        # Global stiller
+├── components/            # Yeniden kullanılabilir bileşenler
+│   └── ui/               # UI bileşenleri
+├── lib/                   # Yardımcı fonksiyonlar
+├── public/               # Statik dosyalar
+├── scripts/              # Yardımcı scriptler
+└── README.md             # Bu dosya
+\`\`\`
+
+## 🤝 Katkıda Bulunma
+
+Katkılarınızı memnuniyetle karşılıyoruz! Katkıda bulunmak için:
+
+1. Projeyi fork edin
+2. Yeni bir branch oluşturun (\`git checkout -b feature/yeni-ozellik\`)
+3. Değişikliklerinizi commit edin (\`git commit -am 'Yeni özellik eklendi'\`)
+4. Branch'inizi push edin (\`git push origin feature/yeni-ozellik\`)
+5. Pull Request oluşturun
+
+### Geliştirme Kuralları
+
+- Kod yazarken TypeScript kullanın
+- Commit mesajlarını açıklayıcı yazın
+- Testlerinizi yazın
+- Linting kurallarına uyun
+
+## 🧪 Test
+
+Testleri çalıştırmak için:
+
+\`\`\`bash
+npm run test
+# veya
+yarn test
+\`\`\`
+
+## 📦 Build
+
+Production build oluşturmak için:
+
+\`\`\`bash
+npm run build
+# veya
+yarn build
+\`\`\`
+
+## 🚀 Deployment
+
+Bu proje Vercel üzerinde kolayca deploy edilebilir:
+
+1. Vercel hesabınıza giriş yapın
+2. GitHub repository'nizi bağlayın
+3. Otomatik deployment başlayacaktır
+
+## 📝 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+
+## 📞 İletişim
+
+- **Geliştirici:** [Adınız](mailto:email@example.com)
+- **Proje Linki:** [https://github.com/kullanici-adi/proje-adi](https://github.com/kullanici-adi/proje-adi)
+- **Demo:** [https://proje-adi.vercel.app](https://proje-adi.vercel.app)
+
+## 🙏 Teşekkürler
+
+Bu projeyi mümkün kılan tüm katkıda bulunanlara teşekkürler:
+
+- [Katkıda Bulunan 1](https://github.com/kullanici1)
+- [Katkıda Bulunan 2](https://github.com/kullanici2)
+
+---
+
+⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
+\`\`\`
+
+Bu README dosyası şunları içerir:
+
+- **Proje açıklaması** ve genel bakış
+- **Detaylı kurulum talimatları** 
+- **Kullanım örnekleri** ve API dokümantasyonu
+- **Özellikler listesi** ve teknoloji stack'i
+- **Proje yapısı** açıklaması
+- **Katkıda bulunma rehberi**
+- **Test ve deployment** talimatları
+- **İletişim bilgileri**
+
+README'yi projenizin özel ihtiyaçlarına göre özelleştirebilirsiniz!
