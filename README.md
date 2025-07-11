@@ -1,6 +1,6 @@
 # Proje Adı
 
-Bu projenin kısa bir açıklaması ve ne yaptığının özeti.
+Modern Next.js projesi - v0 ile geliştirildi
 
 ## 📋 İçindekiler
 
@@ -35,16 +35,18 @@ npm install
 yarn install
 \`\`\`
 
-3. Ortam değişkenlerini ayarlayın:
-\`\`\`bash
-cp .env.example .env.local
-\`\`\`
-
-4. Geliştirme sunucusunu başlatın:
+3. Geliştirme sunucusunu başlatın:
 \`\`\`bash
 npm run dev
 # veya
 yarn dev
+\`\`\`
+
+4. Production build oluşturmak için:
+\`\`\`bash
+npm run build
+# veya
+yarn build
 \`\`\`
 
 5. Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresini açın.
@@ -76,12 +78,12 @@ const response = await fetch('/api/endpoint', {
 
 ## ✨ Özellikler
 
-- ⚡ Hızlı ve performanslı
+- ⚡ Next.js 15 App Router
+- 🎨 Tailwind CSS
+- 🧩 shadcn/ui bileşenleri
 - 📱 Responsive tasarım
-- 🔒 Güvenli kimlik doğrulama
-- 🌙 Karanlık mod desteği
-- 🌍 Çoklu dil desteği
-- 📊 Gerçek zamanlı veri görselleştirme
+- 🌙 Dark mode desteği
+- 🔧 TypeScript
 
 ## 🛠️ Teknolojiler
 
@@ -115,10 +117,10 @@ proje-adi/
 Katkılarınızı memnuniyetle karşılıyoruz! Katkıda bulunmak için:
 
 1. Projeyi fork edin
-2. Yeni bir branch oluşturun (\`git checkout -b feature/yeni-ozellik\`)
-3. Değişikliklerinizi commit edin (\`git commit -am 'Yeni özellik eklendi'\`)
-4. Branch'inizi push edin (\`git push origin feature/yeni-ozellik\`)
-5. Pull Request oluşturun
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Commit edin (`git commit -m 'Add amazing feature'`)
+4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
+5. Pull Request açın
 
 ### Geliştirme Kuralları
 
@@ -135,16 +137,6 @@ Testleri çalıştırmak için:
 npm run test
 # veya
 yarn test
-\`\`\`
-
-## 📦 Build
-
-Production build oluşturmak için:
-
-\`\`\`bash
-npm run build
-# veya
-yarn build
 \`\`\`
 
 ## 🚀 Deployment
@@ -175,17 +167,3 @@ Bu projeyi mümkün kılan tüm katkıda bulunanlara teşekkürler:
 ---
 
 ⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
-\`\`\`
-
-Bu README dosyası şunları içerir:
-
-- **Proje açıklaması** ve genel bakış
-- **Detaylı kurulum talimatları** 
-- **Kullanım örnekleri** ve API dokümantasyonu
-- **Özellikler listesi** ve teknoloji stack'i
-- **Proje yapısı** açıklaması
-- **Katkıda bulunma rehberi**
-- **Test ve deployment** talimatları
-- **İletişim bilgileri**
-
-README'yi projenizin özel ihtiyaçlarına göre özelleştirebilirsiniz!
